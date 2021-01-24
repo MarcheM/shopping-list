@@ -1,9 +1,10 @@
 import { BrowserRouter as Router } from 'react-router-dom'
-import Content from './Content'
+
+import Nav from './components/organism/Nav'
 function App() {
   return (
     <Router>
-      <Content />
+      <Nav />
     </Router>
 
   );

@@ -11,11 +11,11 @@ import Button from '@material-ui/core/Button';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
-        backgroundColor: theme.palette.common.black,
-        color: theme.palette.common.white,
+        backgroundColor: theme.palette.common.white,
+        color: theme.palette.common.black,
     },
     body: {
-        fontSize: 12,
+        fontSize: 14,
     },
 }))(TableCell);
 
@@ -25,15 +25,13 @@ const StyledTableRow = withStyles((theme) => ({
             backgroundColor: theme.palette.action.hover,
         },
     },
-    body: {
-        fontSize: 10,
-    },
 }))(TableRow);
 
+const selfAlign = "left"
 
 const useStyles = makeStyles({
     table: {
-        minWidth: 300,
+        width: "100%",
     },
 });
 
@@ -45,25 +43,23 @@ export default function DataTable({ data }) {
             <Table className={classes.table} aria-label="customized table">
                 <TableHead>
                     <TableRow>
-                        <StyledTableCell align="center">Produkt</StyledTableCell>
-                        <StyledTableCell align="center">Ilość</StyledTableCell>
-                        <StyledTableCell align="center">Cena</StyledTableCell>
+                        <StyledTableCell align={selfAlign}>Produkt</StyledTableCell>
+                        <StyledTableCell align={selfAlign}>Ilość</StyledTableCell>
+                        <StyledTableCell align={selfAlign}></StyledTableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {data.map((product) => (
                         <StyledTableRow key={product.name}>
-                            <StyledTableCell component="th" scope="row">
-                                {product.name}
+                            <StyledTableCell align={selfAlign} component="th" scope="row">
+                                <b> {product.name}</b>
                             </StyledTableCell>
-                            <StyledTableCell align="center">{1}</StyledTableCell>
-                            <StyledTableCell align="center">{product.price}</StyledTableCell>
-                            <StyledTableCell align="center"><Button variant="contained" color="primary">
-                                KUP
-      </Button></StyledTableCell>
-                            <StyledTableCell align="center"><Button variant="contained" color="secondary">
-                                X
-      </Button></StyledTableCell>
+                            <StyledTableCell align={selfAlign}>{product.quantity}</StyledTableCell>
+                            <StyledTableCell align={selfAlign}>
+                                <div style={{ marginBottom: "8px" }}><Button variant="contained" color="primary">Kup</Button></div>
+                                <div ><Button variant="contained" color="secondary">Usuń</Button></div>
+                            </StyledTableCell>
+
                         </StyledTableRow>
                     ))}
                 </TableBody>

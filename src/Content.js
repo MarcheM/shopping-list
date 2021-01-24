@@ -1,10 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
-import MainPage from './components/pages/MainPage'
+import ShoppingList from './components/organism/ShoppingList';
+
 
 const Content = () => {
     return <Switch>
-        <Route exact path='/' component={MainPage} />
+        <Route exact path='/' component={ShoppingList} />
     </Switch>
 }
 

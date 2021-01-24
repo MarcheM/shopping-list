@@ -19,6 +19,7 @@ import ListIcon from '@material-ui/icons/List';
 import EditIcon from '@material-ui/icons/Edit';
 import LockIcon from '@material-ui/icons/Lock';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import Content from '../../Content'
 
 const drawerWidth = 240;
 
@@ -63,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     },
     content: {
         flexGrow: 1,
-        padding: theme.spacing(3),
+        padding: 0,
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
@@ -111,8 +112,8 @@ export default function PersistentDrawerLeft() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap>
-                        Lista zakupowa Marchewów
+                    <Typography variant="h7" noWrap>
+                        Lista zakupowa Marchewiczów
           </Typography>
                 </Toolbar>
             </AppBar>
@@ -155,7 +156,7 @@ export default function PersistentDrawerLeft() {
                 })}
             >
                 <div className={classes.drawerHeader} />
-
+                <Content />
             </main>
         </div>
     );
